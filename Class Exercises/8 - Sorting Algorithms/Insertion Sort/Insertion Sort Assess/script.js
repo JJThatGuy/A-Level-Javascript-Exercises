@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const array = [];
         const size = Math.floor(Math.random() * 5) + 5; // Generate an array of size between 5 and 10
         for (let i = 0; i < size; i++) {
-            array.push(Math.floor(Math.random() * 100) + 1); // Random number between 1 and 100
+            array.push(Math.floor(Math.random() * 10) + 1); // Random number between 1 and 100
         }
         return array;
     }
@@ -29,6 +29,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function insertionSort(array) {
+        for (let i = 1; i < array.length; i++) { 
+            let current = array[i];
+            let j = i - 1 ;
+
+            while ( j >= 0 && array[j] > current) {
+                array[j + 1] = array[j];
+                j--
+            }
+
+            array[j + 1] = current;
+
+        }
+        return array;
   
     }
     
